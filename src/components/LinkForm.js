@@ -4,17 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Select from 'react-select';
 import { RegistradosLista } from './RegistradosLista';
 import firebase from 'firebase/app';
-import {
-  collection,
-  addDoc,
-  updateDoc,
-  doc,
-  deleteDoc,
-  query,
-  where,
-  getDocs,
-  serverTimestamp,
-} from "firebase/firestore";
+
 
 
 const LinkForm = (props) => {
