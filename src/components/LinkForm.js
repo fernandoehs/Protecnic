@@ -1,0 +1,231 @@
+import React, {useState} from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import Select from 'react-select';
+import { RegistradosLista } from './RegistradosLista';
+import firebase from 'firebase/app';
+import {
+  collection,
+  addDoc,
+  updateDoc,
+  doc,
+  deleteDoc,
+  query,
+  where,
+  getDocs,
+  serverTimestamp,
+} from "firebase/firestore";
+
+
+const LinkForm = (props) => {
+
+  
+  
+    const initialStateValues ={
+      empresaseguro:'',
+      expediente: '',
+      aparato:'',
+      direccion:'',
+      localidad:'',
+      fechaentrada:'',
+      estado:'',
+      fechacierre:'',
+      estado: '',
+      diasgestion:'',
+      timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
+      
+    };
+    const [values,setValues]= useState(initialStateValues);
+    
+    const handleInputChange =(e) =>{
+        const {name,value} =e.target;
+        console.log(e.target.value);
+        setValues({...values,[name]:value});
+        
+    }; 
+
+   
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log(values);
+        props.addOrEdit(values);
+        setValues({...initialStateValues});
+        
+    }
+
+    const restaFechas = function(f1,f2)
+    {
+        var aFecha1 = f1.split('-');
+        var aFecha2 = f2.split('-');
+        var aFechaToday = Date.now()
+        var fFecha1 = Date.UTC(aFecha1[0],aFecha1[1]-1,aFecha1[2]);
+        var fFecha2 = Date.UTC(aFecha2[0],aFecha2[1]-1,aFecha2[2]);
+
+        if (f2==''){
+            var dif = aFechaToday - fFecha1;
+        }else{
+            var dif = fFecha2-fFecha1;
+        }
+        
+        var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
+        return dias;
+        }
+  
+
+  
+
+
+    return (
+
+
+        
+        
+    <form className = "card card-body" onSubmit= {handleSubmit}>
+
+        <div className = "form-group">
+        <h5>Empresa de Seguros</h5>
+          <input 
+          type="textarea" 
+          className= "form-control" 
+          placeholder="Empresa de Seguros"
+          name="empresaseguro"
+          onChange={handleInputChange}
+          value={values.empresaseguro}>
+          
+          </input>
+        </div>
+
+        <div className = "form-group">
+        <h5>Número de Expediente</h5>
+          <input 
+          type="textarea" 
+          className= "form-control" 
+          placeholder="Nro de Expediente"
+          name="expediente"
+          onChange={handleInputChange}
+          value={values.expediente}>
+          
+          </input>
+        </div>
+
+        <div className = "form-group">
+        <h5>Aparato</h5>
+          <input 
+          type="textarea" 
+          className= "form-control" 
+          placeholder="Aparato"
+          name="aparato"
+          onChange={handleInputChange}
+          value={values.aparato}>
+          </input>
+        </div>
+
+        <div className = "form-group">
+        <h5>Dirección</h5>
+          <input 
+          type="textarea" 
+          className= "form-control" 
+          placeholder="Direccion"
+          name="direccion"
+          onChange={handleInputChange}
+          value={values.direccion}>
+          </input>
+        </div>
+
+     
+
+        <div className = "form-group">
+        <h5>Localidad</h5>
+       
+        <input 
+          type="textarea" 
+          className= "form-control" 
+          placeholder="localidad"
+          name="localidad"
+          onChange={handleInputChange}
+          value={values.localidad}>
+          
+          </input>
+          
+        
+        </div>
+
+        
+
+        <div className = "form-group">
+       
+    <div class="row">
+    <div class="col">
+    <h5>Fecha de Entrada</h5>
+    <input 
+          type="date" 
+          className= "form-control" 
+         
+          name="fechaentrada"
+          onChange={handleInputChange}
+          value={values.fechaentrada}>
+          </input>
+    </div>
+            <div class="col">
+            <h5>Fecha de Cierre</h5>
+            <input 
+                  type="date" 
+                  className= "form-control" 
+                 
+                  name="fechacierre"
+                  onChange={handleInputChange}
+                  value={values.fechacierre}>
+                  </input>
+            </div>
+          </div>
+  
+          </div>
+
+          <div className = "form-group">
+          <h5>Días de Gestión</h5>
+          <input 
+          type="text" 
+          className= "form-control" 
+          placeholder="Dias de gestion"
+          name="diasgestion"
+          onChange={handleInputChange}
+          value={values.diasgestion }>
+          </input>
+        </div>
+
+        <div className = "form-group">
+          <h5>Estado</h5>
+          <input 
+          type="text" 
+          className= "form-control" 
+          placeholder="Estado"
+          name="estado"
+          onChange={handleInputChange}
+          value={values.estado }>
+          </input>
+        </div>
+
+      
+
+        <button className="btn btn-primary btn-block">
+          Guardar
+        </button>
+         
+        <table class="table table-bordered">
+  
+         <tr>
+        <RegistradosLista/>
+        </tr>
+        </table>
+      </form>
+
+
+ 
+
+      
+
+    );
+};
+
+export default LinkForm;
