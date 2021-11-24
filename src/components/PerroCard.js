@@ -1,4 +1,5 @@
 import React from 'react';
+import EditaEstado from './EditaEstado';
 
 export const PerroCard = (
     {
@@ -9,9 +10,9 @@ export const PerroCard = (
         localidad,
         fechaentrada,
         fechacierre,
-        status,
         diasgestion,
         estado,
+        uid,
         
    } ) => {
     
@@ -34,8 +35,7 @@ export const PerroCard = (
         return dias;
         }
          
-    
-  
+        
 
     return(
         <div className="card ms-3" style={{maxWidth: 540}}>
@@ -68,19 +68,26 @@ export const PerroCard = (
                         <p className="card-text">
                             Dias: {restaFechas(fechaentrada,fechacierre)}
                         </p>
+                        {
+                           
+                           (restaFechas(fechaentrada,fechacierre) >= 1)
+                             &&<button type="button" class="btn btn-danger">Llamar</button>
+                       }
                         <p className="card-text">
                             estado: {estado}
                         </p>
                         {
                            
-                            (estado == "rojo")
-                              &&<button type="button" class="btn btn-info">Info</button>
+                            (restaFechas(fechaentrada,fechacierre) ==0)
+                              &&<button type="button" class="btn btn-info">Llamar</button>
                         }
                         {
                            
                            (estado == "azul")
                              &&<button type="button" class="btn btn-danger">Info</button>
                        }
+
+                       <EditaEstado/>
                         
                   </div>
             </div>

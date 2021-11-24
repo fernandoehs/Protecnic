@@ -23,6 +23,23 @@ export function Nav(){
                 >
                     Registro
                 </NavLink>
+                <NavLink 
+                    activeClassName="active"
+                    className="nav-item nav-link" 
+                    exact
+                    to="/porllamar"
+                >
+                    Llamar
+                </NavLink>
+
+                <NavLink 
+                    activeClassName="active"
+                    className="nav-item nav-link" 
+                    exact
+                    to="/porvisitar"
+                >
+                    Visitar
+                </NavLink>
 
                 <NavLink 
                     activeClassName="active"
@@ -63,6 +80,14 @@ export function Nav(){
                     to="/ocaso"
                 >
                     Ocaso
+                </NavLink>
+                <NavLink 
+                    activeClassName="active"
+                    className="nav-item nav-link" 
+                    exact
+                    to="/generali"
+                >
+                    Generali
                 </NavLink>
             </div>
         </div>

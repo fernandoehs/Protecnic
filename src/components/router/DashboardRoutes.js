@@ -7,6 +7,9 @@ import {Registrados} from '../Registrados';
 import {ClientesMapfre} from '../ClientesMapfre';
 import {ClientesCatalana} from '../ClientesCatalana';
 import {ClientesOcaso} from '../ClientesOcaso';
+import {ClientesGenerali} from '../ClientesGenerali';
+import {ClientesPorllamar} from '../ClientesPorllamar';
+import {ClientesPorvisitar} from '../ClientesPorvisitar';
 
 
 import {
@@ -29,6 +32,9 @@ export const DashboardRoutes = () => {
                 <Route exact path="/mapfre" component={ClientesMapfre}/>
                 <Route exact path="/catalana" component={ClientesCatalana}/>
                 <Route exact path="/ocaso" component={ClientesOcaso}/>
+                <Route exact path="/generali" component={ClientesGenerali}/>
+                <Route exact path="/porllamar" component={ClientesPorllamar}/>
+                <Route exact path="/porvisitar" component={ClientesPorvisitar}/>
                 <Redirect to="/registro/"/>
              </Switch>    
           </div>  
