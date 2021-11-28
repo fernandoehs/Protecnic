@@ -6,19 +6,30 @@ import { RegistradosLista } from './RegistradosLista';
 import firebase from 'firebase/app';
 import {useHistory,useParams} from "react-router-dom";
 import {db} from "../firebase";
+import {props} from "./PerroCard"
 
 
 
-const EditaEstado = (props) => {
+const EditaEstado = (    {
+  empresaseguro,
+  expediente,
+  aparato,
+  direccion,
+  localidad,
+  fechaentrada,
+  fechacierre,
+  diasgestion,
+  estado,
+  id,
+  
+} ) => {
 
-
-    var db = firebase.firestore();
 
     
 
     const handleSubmit = e => {
-        db.collection("clientes-bd").get(doc.id).update({estado: "porvisitar"});
 
+      
         
         
     }
@@ -35,8 +46,7 @@ const EditaEstado = (props) => {
           <h5>Estado</h5>
        
         </div>
-
-      
+       
 
         <button className="btn btn-primary btn-block">
           Guardar

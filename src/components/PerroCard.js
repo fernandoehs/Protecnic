@@ -1,5 +1,6 @@
 import React from 'react';
 import EditaEstado from './EditaEstado';
+import{db} from '../firebase';
 
 export const PerroCard = (
     {
@@ -12,9 +13,10 @@ export const PerroCard = (
         fechacierre,
         diasgestion,
         estado,
-        uid,
+        id,
         
    } ) => {
+
     
 
     var restaFechas = function(f1,f2)
@@ -34,7 +36,17 @@ export const PerroCard = (
         var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
         return dias;
         }
-         
+
+        
+        const handleSubmit = e => {
+
+            const docRef = db.collection("clientes-bd").doc(id);
+            //const addDocument = await docRef.set({ estado: "porvisitar" })
+             docRef.update({ estado: "porvisitar" })
+        
+        
+        }
+    
         
 
     return(
@@ -45,11 +57,21 @@ export const PerroCard = (
                    
                     </div>    
                 </div>
+                 <div>
+              
+                </div>
+
                 <div className="col-md-8">
                   <div className="card-body">
+
+                     
+
                         <h5 className="card-title">
                             Número de Expediente :{expediente}
                         </h5>
+                        <p className="card-text">
+                            ID: {id}
+                        </p>
                         <p className="card-text">
                             Empresa: {empresaseguro}
                         </p>
@@ -76,6 +98,7 @@ export const PerroCard = (
                         <p className="card-text">
                             estado: {estado}
                         </p>
+                      
                         {
                            
                             (restaFechas(fechaentrada,fechacierre) ==0)
@@ -86,11 +109,26 @@ export const PerroCard = (
                            (estado == "azul")
                              &&<button type="button" class="btn btn-danger">Info</button>
                        }
+                       
 
-                       <EditaEstado/>
+
                         
                   </div>
             </div>
+                    
+    <form className = "card card-body" onSubmit= {handleSubmit}>
+
+<div className = "form-group">
+  <h5>Estado</h5>
+
+</div>
+
+
+<button className="btn btn-primary btn-block">
+  Guardar
+</button>
+ 
+</form>
         
          </div>
            

@@ -4,6 +4,7 @@ import{db} from '../firebase';
 
 import { ClientesLista } from './ClientesLista';
 import { PerroCard } from './PerroCard';
+import { toast } from 'react-toastify';
 
 export const ClientesPorllamar = () => {
 
@@ -17,11 +18,16 @@ export const ClientesPorllamar = () => {
                querySnapshot.forEach((doc)=>{
                    
                    docs.push({...doc.data(), id:doc.id});
+                   console.log(doc.id);
                });
+               
                setLinks(docs);
+               
            });
          
         };
+
+     
 
 
         useEffect(() => {

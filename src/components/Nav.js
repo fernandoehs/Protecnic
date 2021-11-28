@@ -89,6 +89,14 @@ export function Nav(){
                 >
                     Generali
                 </NavLink>
+                <NavLink 
+                    activeClassName="active"
+                    className="nav-item nav-link" 
+                    exact
+                    to="/admin"
+                >
+                    Admin
+                </NavLink>
             </div>
         </div>
 

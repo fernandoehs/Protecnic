@@ -4,6 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Select from 'react-select';
 import { RegistradosLista } from './RegistradosLista';
 import firebase from 'firebase/app';
+import{toast} from "react-toastify";
 
 
 
@@ -39,10 +40,14 @@ const LinkForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log(values);
-        props.addOrEdit(values);
-        setValues({...initialStateValues});
+    
+          props.addOrEdit(values);
         
-    }
+          setValues({...initialStateValues});
+        }
+        
+        
+    
 
     const restaFechas = function(f1,f2)
     {

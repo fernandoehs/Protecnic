@@ -20,7 +20,7 @@ const BusquedaForm = () => {
     const handleInputChange =(e) =>{
         const {value} =e.target;
         valor = e.target.value;
-      // setValues({value});
+       setValues({value});
         console.log(valor)
         valorBuscar=valor;
         };
@@ -29,7 +29,7 @@ const BusquedaForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         buscar();
-        //setValues({...initialStateValues});
+        setValues({...initialStateValues});
         
     }
 
