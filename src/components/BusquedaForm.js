@@ -49,6 +49,8 @@ const BusquedaForm = () => {
     }
     return (
     <div>
+
+        
     <form className = "card card-body" onSubmit= {handleSubmit}>
         
         <div className = "form-group input-group">
@@ -71,7 +73,7 @@ const BusquedaForm = () => {
     <div className="col-md-8" >
     {links.map(link=>{
        return <div key={link.id}>
-             <h1 >{link.nombre}</h1>
+             <h1 >{link.expediente}</h1>
              </div>
     })}
            

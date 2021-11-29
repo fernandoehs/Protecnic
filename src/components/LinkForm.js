@@ -5,7 +5,7 @@ import Select from 'react-select';
 import { RegistradosLista } from './RegistradosLista';
 import firebase from 'firebase/app';
 import{toast} from "react-toastify";
-
+import{NuevaForm} from './NuevaForm';
 
 
 const LinkForm = (props) => {
@@ -92,6 +92,15 @@ const LinkForm = (props) => {
         </div>
 
         <div className = "form-group">
+        <h5>Empresa</h5>
+        <select name="localidad" onChange={handleInputChange} >
+        <option value="">Select...</option>
+        <option  value="Barcelona">Barcelona</option>
+        <option value="B">Categorye</option>
+      </select>
+        </div>
+
+        <div className = "form-group">
         <h5>Número de Expediente</h5>
           <input 
           type="textarea" 
@@ -130,21 +139,10 @@ const LinkForm = (props) => {
 
      
 
-        <div className = "form-group">
-        <h5>Localidad</h5>
        
-        <input 
-          type="textarea" 
-          className= "form-control" 
-          placeholder="localidad"
-          name="localidad"
-          onChange={handleInputChange}
-          value={values.localidad}>
-          
-          </input>
           
         
-        </div>
+      
 
         
 
@@ -210,9 +208,11 @@ const LinkForm = (props) => {
         <table class="table table-bordered">
   
          <tr>
-        <RegistradosLista/>
+        
         </tr>
         </table>
+        
+
       </form>
 
 
