@@ -78,33 +78,23 @@ const LinkForm = (props) => {
         
     <form className = "card card-body" onSubmit= {handleSubmit}>
 
+    
         <div className = "form-group">
         <h5>Empresa de Seguros</h5>
-          <input 
-          type="textarea" 
-          className= "form-control" 
-          placeholder="Empresa de Seguros"
-          name="empresaseguro"
-          onChange={handleInputChange}
-          value={values.empresaseguro}>
-          
-          </input>
+          <select name="empresaseguro" onChange={handleInputChange} >
+            <option value="Mapfre">Mapfre</option>
+            <option  value="Catalana">Catalana</option>
+            <option value="Ocaso">Ocaso</option>
+            <option value="Generali">Generali</option>
+          </select>
         </div>
 
-        <div className = "form-group">
-        <h5>Empresa</h5>
-        <select name="localidad" onChange={handleInputChange} >
-        <option value="">Select...</option>
-        <option  value="Barcelona">Barcelona</option>
-        <option value="B">Categorye</option>
-      </select>
-        </div>
-
+       
         <div className = "form-group">
         <h5>Número de Expediente</h5>
           <input 
           type="textarea" 
-          className= "form-control" 
+          //className= "form-control" 
           placeholder="Nro de Expediente"
           name="expediente"
           onChange={handleInputChange}
@@ -117,7 +107,7 @@ const LinkForm = (props) => {
         <h5>Aparato</h5>
           <input 
           type="textarea" 
-          className= "form-control" 
+         // className= "form-control" 
           placeholder="Aparato"
           name="aparato"
           onChange={handleInputChange}
@@ -129,7 +119,7 @@ const LinkForm = (props) => {
         <h5>Dirección</h5>
           <input 
           type="textarea" 
-          className= "form-control" 
+          //className= "form-control" 
           placeholder="Direccion"
           name="direccion"
           onChange={handleInputChange}
@@ -137,14 +127,16 @@ const LinkForm = (props) => {
           </input>
         </div>
 
-     
+        <div className = "form-group">
+        <h5>Localidad</h5>
+          <select name="localidad" onChange={handleInputChange} >
+            <option value="Barcelona">Barcelona</option>
+            <option  value="Sta. Coloma">Sta. Coloma</option>
+            <option value="El Besos">El Besos</option>
+            <option value="Badalona">Badalona</option>
+          </select>
+        </div>
 
-       
-          
-        
-      
-
-        
 
         <div className = "form-group">
        
@@ -153,7 +145,7 @@ const LinkForm = (props) => {
     <h5>Fecha de Entrada</h5>
     <input 
           type="date" 
-          className= "form-control" 
+          //className= "form-control" 
          
           name="fechaentrada"
           onChange={handleInputChange}
@@ -164,7 +156,7 @@ const LinkForm = (props) => {
             <h5>Fecha de Cierre</h5>
             <input 
                   type="date" 
-                  className= "form-control" 
+                  //className= "form-control" 
                  
                   name="fechacierre"
                   onChange={handleInputChange}
@@ -179,7 +171,7 @@ const LinkForm = (props) => {
           <h5>Días de Gestión</h5>
           <input 
           type="text" 
-          className= "form-control" 
+          //className= "form-control" 
           placeholder="Dias de gestion"
           name="diasgestion"
           onChange={handleInputChange}
@@ -191,7 +183,7 @@ const LinkForm = (props) => {
           <h5>Estado</h5>
           <input 
           type="text" 
-          className= "form-control" 
+          //className= "form-control" 
           placeholder="Estado"
           name="estado"
           onChange={handleInputChange}
@@ -201,7 +193,7 @@ const LinkForm = (props) => {
 
       
 
-        <button className="btn btn-primary btn-block">
+        <button className="button">
           Guardar
         </button>
          
