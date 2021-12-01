@@ -78,20 +78,20 @@ const LinkForm = (props) => {
         
     <form className = "card card-body" onSubmit= {handleSubmit}>
 
-    
-        <div className = "form-group">
-        <h5>Empresa de Seguros</h5>
+<div className = "form-group">
+       
+       <div class="row">
+       <div class="col">
+       <h5>Empresa de Seguros</h5>
           <select name="empresaseguro" onChange={handleInputChange} >
             <option value="Mapfre">Mapfre</option>
             <option  value="Catalana">Catalana</option>
             <option value="Ocaso">Ocaso</option>
             <option value="Generali">Generali</option>
           </select>
-        </div>
-
-       
-        <div className = "form-group">
-        <h5>Número de Expediente</h5>
+     </div>
+         <div class="col">
+         <h5>Número de Expediente</h5>
           <input 
           type="textarea" 
           //className= "form-control" 
@@ -99,21 +99,42 @@ const LinkForm = (props) => {
           name="expediente"
           onChange={handleInputChange}
           value={values.expediente}>
-          
           </input>
-        </div>
+         </div>
+       </div>
+       </div>
+       
+    
 
         <div className = "form-group">
-        <h5>Aparato</h5>
-          <input 
-          type="textarea" 
-         // className= "form-control" 
-          placeholder="Aparato"
-          name="aparato"
-          onChange={handleInputChange}
-          value={values.aparato}>
-          </input>
+        <div class="row">
+        <div class="col">
+          <h5>Aparato</h5>
+            <input 
+            type="textarea" 
+          // className= "form-control" 
+            placeholder="Aparato"
+            name="aparato"
+            onChange={handleInputChange}
+            value={values.aparato}>
+            </input>
         </div>
+
+         
+       <div class="col">
+       <h5>Localidad</h5>
+          <select name="localidad" onChange={handleInputChange} >
+            <option value="Barcelona">Barcelona</option>
+            <option  value="Sta. Coloma">Sta. Coloma</option>
+            <option value="El Besos">El Besos</option>
+            <option value="Badalona">Badalona</option>
+          </select>
+
+        </div>
+        </div>
+        </div>
+
+
 
         <div className = "form-group">
         <h5>Dirección</h5>
@@ -127,31 +148,21 @@ const LinkForm = (props) => {
           </input>
         </div>
 
-        <div className = "form-group">
-        <h5>Localidad</h5>
-          <select name="localidad" onChange={handleInputChange} >
-            <option value="Barcelona">Barcelona</option>
-            <option  value="Sta. Coloma">Sta. Coloma</option>
-            <option value="El Besos">El Besos</option>
-            <option value="Badalona">Badalona</option>
-          </select>
-        </div>
-
 
         <div className = "form-group">
        
-    <div class="row">
-    <div class="col">
-    <h5>Fecha de Entrada</h5>
-    <input 
-          type="date" 
-          //className= "form-control" 
-         
-          name="fechaentrada"
-          onChange={handleInputChange}
-          value={values.fechaentrada}>
-          </input>
-    </div>
+          <div class="row">
+          <div class="col">
+          <h5>Fecha de Entrada</h5>
+                <input 
+                type="date" 
+                //className= "form-control" 
+              
+                name="fechaentrada"
+                onChange={handleInputChange}
+                value={values.fechaentrada}>
+                </input>
+        </div>
             <div class="col">
             <h5>Fecha de Cierre</h5>
             <input 
@@ -168,28 +179,32 @@ const LinkForm = (props) => {
           </div>
 
           <div className = "form-group">
-          <h5>Días de Gestión</h5>
-          <input 
-          type="text" 
-          //className= "form-control" 
-          placeholder="Dias de gestion"
-          name="diasgestion"
-          onChange={handleInputChange}
-          value={values.diasgestion }>
-          </input>
-        </div>
+            <div class="row">
+              <div class="col">
+                  <h5>Días de Gestión</h5>
+                  <input 
+                  type="text" 
+                  //className= "form-control" 
+                  placeholder="Dias de gestion"
+                  name="diasgestion"
+                  onChange={handleInputChange}
+                  value={values.diasgestion }>
+                  </input>
+              </div>
 
-        <div className = "form-group">
-          <h5>Estado</h5>
-          <input 
-          type="text" 
-          //className= "form-control" 
-          placeholder="Estado"
-          name="estado"
-          onChange={handleInputChange}
-          value={values.estado }>
-          </input>
-        </div>
+              <div class = "col">
+                  <h5>Estado</h5>
+                  <input 
+                  type="text" 
+                  //className= "form-control" 
+                  placeholder="Estado"
+                  name="estado"
+                  onChange={handleInputChange}
+                  value={values.estado }>
+                  </input>
+              </div>
+            </div>
+         </div>
 
       
 

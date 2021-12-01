@@ -1,7 +1,8 @@
 
-import './App.css';
+
 import React from 'react';
 import Nav from './components/Nav';
+import Lateral from './components/Lateral';
 
 
 
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="container p-4">
+
       <Nav/>
       <div row>  
       </div>
