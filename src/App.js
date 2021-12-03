@@ -17,7 +17,6 @@ function App() {
 
   return (
     <div className="container p-4">
-
       <Nav/>
       <div row>  
       </div>

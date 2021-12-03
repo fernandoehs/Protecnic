@@ -4,7 +4,7 @@ import{db} from '../firebase';
 
 import { ClientesLista } from './ClientesLista';
 import { PerroCard } from './PerroCard';
-import { toast } from 'react-toastify';
+import { Lista } from './Lista';
 
 export const ClientesPorllamar = () => {
 
@@ -35,11 +35,11 @@ export const ClientesPorllamar = () => {
         }, [])
     return(
         <div>
-           
-            <div className="card-colunns" >
+
+        
                 {links.map(link=>{
                     
-                   return <PerroCard
+                   return <Lista
                          key={link.id}
                         // <h1 >{link.nombre}</h1>
                         {...link}
@@ -50,7 +50,7 @@ export const ClientesPorllamar = () => {
                        
             </div>
 
-         </div>
+        
 
         
     )
