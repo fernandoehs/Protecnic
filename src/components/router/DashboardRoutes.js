@@ -24,7 +24,7 @@ export const DashboardRoutes = () => {
     return (
         <>
           <Nav />
-          <div className="container mt-2" >
+          {/* <div className="container mt-2" > */}
              <Switch>
                 <Route exact path="/registro/" component={Links}/>
                
@@ -39,7 +39,7 @@ export const DashboardRoutes = () => {
                 <Route exact path="/admin" component={Admin}/>
                 <Redirect to="/registro/"/>
              </Switch>    
-          </div>  
+          {/* </div>   */}
         </>
     )
 }

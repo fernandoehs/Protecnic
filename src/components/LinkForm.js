@@ -76,7 +76,7 @@ const LinkForm = (props) => {
 
         
         
-    <form className = "card card-body" onSubmit= {handleSubmit}>
+    <form className = "card card-body" style={{ width: '36rem' }} onSubmit= {handleSubmit}>
 
 <div className = "form-group">
        
