@@ -84,6 +84,7 @@ const LinkForm = (props) => {
        <div class="col">
        <h5>Empresa de Seguros</h5>
           <select name="empresaseguro" onChange={handleInputChange} >
+          <option selected>Seguro</option>
             <option value="Mapfre">Mapfre</option>
             <option  value="Catalana">Catalana</option>
             <option value="Ocaso">Ocaso</option>
@@ -124,6 +125,7 @@ const LinkForm = (props) => {
        <div class="col">
        <h5>Localidad</h5>
           <select name="localidad" onChange={handleInputChange} >
+          <option selected>Localidad</option>
             <option value="Barcelona">Barcelona</option>
             <option  value="Sta. Coloma">Sta. Coloma</option>
             <option value="El Besos">El Besos</option>
