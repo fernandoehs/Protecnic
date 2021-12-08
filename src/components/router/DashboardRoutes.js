@@ -18,12 +18,13 @@ import {
     Route,
     
   } from "react-router-dom";
+import NavHamb from '../NavHamb';
 
 
 export const DashboardRoutes = () => {
     return (
         <>
-          <Nav />
+          <NavHamb />
           {/* <div className="container mt-2" > */}
              <Switch>
                 <Route exact path="/registro/" component={Links}/>

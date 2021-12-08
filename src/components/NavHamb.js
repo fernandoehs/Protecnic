@@ -1,21 +1,16 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'
+import { NavDropdown, Navbar,Nav, Container } from 'react-bootstrap'
 
-export function Nav(){
+export function NavHamb(){
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-        
-        <Link 
-            className="navbar-brand" 
-            to="/"
-        >
-            
-        </Link>
-
-        <div className="navbar-collapse">
-            <div className="navbar-nav">
-
-                <NavLink 
+    <Navbar bg="light" expand="lg">
+  
+    <Navbar.Brand href="#home">Protecnic</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto">
+      <NavLink 
                     activeClassName="active"
                     className="nav-item nav-link" 
                     exact
@@ -97,10 +92,8 @@ export function Nav(){
                 >
                     Admin
                 </NavLink>
-            </div>
-        </div>
 
-        <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 ">
+                <div class="login" style={{paddingLeft : '15rem'}}>
             <ul className="navbar-nav ml-auto ">
                 <NavLink 
                     activeClassName="active"
@@ -112,11 +105,10 @@ export function Nav(){
                 </NavLink>
             </ul>
         </div>
-    </nav>
+      </Nav>
+    </Navbar.Collapse>
+  
+</Navbar>
 )
 };
-export default Nav;
-
-
-
-
+export default NavHamb;

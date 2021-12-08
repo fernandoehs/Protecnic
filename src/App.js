@@ -3,6 +3,7 @@
 import React from 'react';
 import Nav from './components/Nav';
 import Lateral from './components/Lateral';
+import NavHamb from './components/NavHamb';
 
 
 
@@ -17,7 +18,7 @@ function App() {
 
   return (
     <div className="container p-4">
-      <Nav/>
+      <NavHamb/>
       <div row>  
       </div>
 
