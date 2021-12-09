@@ -1,7 +1,7 @@
 import React from 'react';
 import EditaEstado from './EditaEstado';
 import{db} from '../firebase';
-import { CardGroup, Card,Button, Alert } from 'react-bootstrap';
+import { CardGroup, Card,Button, Alert,Badge } from 'react-bootstrap';
 
 export const Lista = (
     {
@@ -53,7 +53,7 @@ export const Lista = (
     return(
         
         <Card>
-            
+            <form className = "card card-body justify-content-center" onSubmit= {handleSubmit} >
                 <Card.Body>
                         <div class="row">
                             <div class="col">
@@ -77,20 +77,16 @@ export const Lista = (
                          </div>  
 
                          <div class="row">
-                            <div class="col">
+                            
+                           <div class="col">
                                 <p className="card-text">
-                                {/* Dirección: {localidad} */}
-                                {
-                           
-                           (restaFechas(fechaentrada,fechacierre) >= 1)
-                             &&<Alert variant="danger">Estado: Llamar</Alert>
-                            //  <button type="button" class="btn btn-danger">Llamar</button>
-                       }
+                                Entrada: {fechaentrada}
+                                {/* Cierre: {fechacierre} */}
                                 </p>
                            </div>
                            <div class="col">
                                 <p className="card-text">
-                                Entrada: {fechaentrada}
+                                Cierre: {fechacierre}
                                 {/* Cierre: {fechacierre} */}
                                 </p>
                            </div>
@@ -101,49 +97,81 @@ export const Lista = (
                            </div>
                          </div>  
 
-                        {
-                           
-                        //    (restaFechas(fechaentrada,fechacierre) >= 1)
-                        //      &&<Alert variant="danger">Llamar</Alert>
+                         <div class="row">
+                            
+                           <div class="col">
+                                <p className="card-text">
+                                Localidad: {localidad}
+                                {/* Cierre: {fechacierre} */}
+                                </p>
+                           </div>
+                           <div class="col">
+                                <p className="card-text">
+                                Dirección: {direccion}
+                                {/* Cierre: {fechacierre} */}
+                                </p>
+                           </div>
+                         
+                           <div class="col">
+                                <p className="card-text">
+                           {
+                           (restaFechas(fechaentrada,fechacierre) >= 1)
+                             &&//<Alert variant="danger">Estado: Llamar</Alert>
+                             <Badge bg="danger">Estado: Llamar</Badge>
                             //  <button type="button" class="btn btn-danger">Llamar</button>
+                           }
+                            {
+                           
+                           (restaFechas(fechaentrada,fechacierre) ==0)
+                             &&//<Alert variant="dark">Estado: Llamar</Alert>
+                             <Badge bg="secondary">Estado: Llamar</Badge>
                        }
-                        {/* <p className="card-text">
-                            estado: {estado}
-                        </p> */}
+                                </p>
+                           </div>
+                         </div>  
+
                       
+                       
                         {
                            
-                            (restaFechas(fechaentrada,fechacierre) ==0)
-                              &&<Alert variant="dark">Estado: Llamar</Alert>
-                        }
-                        {
-                           
-                           (estado == "azul")
-                             &&<button type="button" class="btn btn-danger">Info</button>
+                        //    (estado == "azul")
+                        //      &&<button type="button" class="btn btn-danger">Info</button>
                        }
                            
-       
+                   
                   </Card.Body>
                   
-                  <form className = "card card-body justify-content-center" onSubmit= {handleSubmit} >
+                 
 
 {/* <div className = "form-group">
   <h5>Estado</h5>
   <Button className="btn btn-primary btn-block" variant="primary">Visitar</Button>
 </div> */}
                      <div class="justify-content-center">
-                    <button className="btn btn-primary btn-block">
+                     <div class="row">
+    <div class="col text-center">
+                    {/* <button className="btn btn-primary btn-block">
                     Visitar
-                    </button>
+                    </button> */}
+                    <Button className="btn btn-primary btn-lg" type="submit" variant="warning">Visitar</Button>
+
+                    </div>
+                    </div>
                     </div>
                 </form>
-
-         
-              
+{/* 
+<form className = "card card-body justify-content-center" onSubmit= {handleSubmit} >      
+<div class="justify-content-center"> */}
+                    {/* <button className="btn btn-primary btn-block">
+                    Visitar
+                    </button> */}
+                    
+                    {/* <Button vclassName="btn btn-primary btn-block" variant="warning">Visitar</Button>
+                    </div> */}
+         {/* </form> */}
+        
         
          </Card>
-
-           
-        
+      
     )
 }
