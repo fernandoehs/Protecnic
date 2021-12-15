@@ -93,7 +93,7 @@ export function NavHamb(){
                     Admin
                 </NavLink>
 
-                <div class="login" style={{paddingLeft : '15rem'}}>
+                <div className="login" style={{paddingLeft : '15rem'}}>
             <ul className="navbar-nav ml-auto ">
                 <NavLink 
                     activeClassName="active"

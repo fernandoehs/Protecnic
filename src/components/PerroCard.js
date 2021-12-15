@@ -93,7 +93,7 @@ export const PerroCard = (
                         {
                            
                            (restaFechas(fechaentrada,fechacierre) >= 1)
-                             &&<button type="button" class="btn btn-danger">Llamar</button>
+                             &&<button type="button" className="btn btn-danger">Llamar</button>
                        }
                         <p className="card-text">
                             estado: {estado}
@@ -102,12 +102,12 @@ export const PerroCard = (
                         {
                            
                             (restaFechas(fechaentrada,fechacierre) ==0)
-                              &&<button type="button" class="btn btn-info">Llamar</button>
+                              &&<button type="button" className="btn btn-info">Llamar</button>
                         }
                         {
                            
                            (estado == "azul")
-                             &&<button type="button" class="btn btn-danger">Info</button>
+                             &&<button type="button" className="btn btn-danger">Info</button>
                        }
                        
 

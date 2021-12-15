@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect,useState} from 'react';
 import{db} from '../firebase';
+import {PerroCard} from './PerroCard';
 
 ///import {getlinks} from './Busqueda';
 
@@ -20,33 +21,52 @@ const BusquedaForm = () => {
     const handleInputChange =(e) =>{
         const {value} =e.target;
         valor = e.target.value;
-       setValues({value});
-        console.log(valor)
-        valorBuscar=valor;
+       setValues(value);
+       // console.log(valor)
+        valorBuscar=valor.toString();
+        //console.log(valorBuscar)
+       
         };
 
-
+    
     const handleSubmit = e => {
         e.preventDefault();
-        buscar();
-        setValues({...initialStateValues});
+    //     var fe = 'fe';
+    buscar(values);
+      setValues({...initialStateValues});
         
     }
 
-    const buscar = () =>{
-        db.collection('clientes-bd')
-        .where("expediente", "==",valorBuscar).onSnapshot((querySnapshot)=>{
+    useEffect(() => {
+       //var fe = 'fe';
+       // var valorBuscar=valor.toString();
+       // buscar(values);
+      console.log(values)
+    }, [values])
+    
+
+   
+    
+    function buscar(a){
+       
+       console.log(a)
+       
+       return db.collection('clientes-bd')
+        .where("expediente", "==", a).onSnapshot((querySnapshot)=>{
+        
             const docs=[];
-            
+             
             querySnapshot.forEach((doc)=>{
                 
                 docs.push({...doc.data(), id:doc.id});
             });
             setLinks(docs);
-            console.log(docs)
+            console.log(docs);
             //console.log(linkObject);
         });
     }
+    
+   
     return (
     <div>
 
@@ -72,9 +92,12 @@ const BusquedaForm = () => {
     </form>
     <div className="col-md-8" >
     {links.map(link=>{
-       return <div key={link.id}>
-             <h1 >{link.expediente}</h1>
-             </div>
+       return <PerroCard 
+       key={link.id}
+       
+     {...link}
+     //<h1 >{link.id}</h1>
+     />
     })}
            
     </div>

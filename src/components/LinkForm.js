@@ -80,18 +80,18 @@ const LinkForm = (props) => {
 
 <div className = "form-group">
        
-       <div class="row">
-       <div class="col">
+       <div className="row">
+       <div className="col">
        <h5>Empresa de Seguros</h5>
           <select name="empresaseguro" onChange={handleInputChange} >
           <option selected>Seguro</option>
-            <option value="Mapfre">Mapfre</option>
-            <option  value="Catalana">Catalana</option>
-            <option value="Ocaso">Ocaso</option>
-            <option value="Generali">Generali</option>
+            <option value="mapfre">Mapfre</option>
+            <option  value="catalana">Catalana</option>
+            <option value="ocaso">Ocaso</option>
+            <option value="generali">Generali</option>
           </select>
      </div>
-         <div class="col">
+         <div className="col">
          <h5>Número de Expediente</h5>
           <input 
           type="textarea" 
@@ -108,8 +108,8 @@ const LinkForm = (props) => {
     
 
         <div className = "form-group">
-        <div class="row">
-        <div class="col">
+        <div className="row">
+        <div className="col">
           <h5>Aparato</h5>
             <input 
             type="textarea" 
@@ -122,7 +122,7 @@ const LinkForm = (props) => {
         </div>
 
          
-       <div class="col">
+       <div className="col">
        <h5>Localidad</h5>
           <select name="localidad" onChange={handleInputChange} >
           <option selected>Localidad</option>
@@ -153,8 +153,8 @@ const LinkForm = (props) => {
 
         <div className = "form-group">
        
-          <div class="row">
-          <div class="col">
+          <div className="row">
+          <div className="col">
           <h5>Fecha de Entrada</h5>
                 <input 
                 type="date" 
@@ -165,7 +165,7 @@ const LinkForm = (props) => {
                 value={values.fechaentrada}>
                 </input>
         </div>
-            <div class="col">
+            <div className="col">
             <h5>Fecha de Cierre</h5>
             <input 
                   type="date" 
@@ -181,8 +181,8 @@ const LinkForm = (props) => {
           </div>
 
           <div className = "form-group">
-            <div class="row">
-              <div class="col">
+            <div className="row">
+              <div className="col">
                   <h5>Días de Gestión</h5>
                   <input 
                   type="text" 
@@ -214,7 +214,7 @@ const LinkForm = (props) => {
           Guardar
         </button>
          
-        <table class="table table-bordered">
+        <table className="table table-bordered">
   
          <tr>
         
