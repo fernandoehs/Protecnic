@@ -3,7 +3,7 @@ import{db} from '../firebase';
 //import BusquedaForm from './BusquedaForm';
 
 import { ClientesLista } from './ClientesLista';
-import { PerroCard } from './PerroCard';
+import { ListaVisitar } from './ListaVisitar';
 
 export const ClientesPorvisitar = () => {
 
@@ -33,7 +33,7 @@ export const ClientesPorvisitar = () => {
             <div className="card-colunns" >
                 {links.map(link=>{
                     
-                   return <PerroCard
+                   return <ListaVisitar
                          key={link.id}
                         // <h1 >{link.nombre}</h1>
                         {...link}

@@ -1,6 +1,7 @@
 import React, {useEffect,useState} from 'react';
 import{db} from '../firebase';
 import {PerroCard} from './PerroCard';
+import { ListaBasica } from './ListaBasica';
 
 ///import {getlinks} from './Busqueda';
 
@@ -92,7 +93,7 @@ const BusquedaForm = () => {
     </form>
     <div className="col-md-8" >
     {links.map(link=>{
-       return <PerroCard 
+       return <ListaBasica 
        key={link.id}
        
      {...link}

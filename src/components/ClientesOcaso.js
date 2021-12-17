@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import{db} from '../firebase';
 //import BusquedaForm from './BusquedaForm';
-import {PerroCard} from './PerroCard';
+import {ListaBasica} from './ListaBasica';
 
 export const ClientesOcaso = () => {
 
@@ -31,7 +31,7 @@ export const ClientesOcaso = () => {
             <div className="card-colunns" >
                 {links.map(link=>{
                     
-                   return <PerroCard 
+                   return <ListaBasica
                          key={link.id}
                         // <h1 >{link.nombre}</h1>
                         {...link}

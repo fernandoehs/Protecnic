@@ -27,7 +27,7 @@ export const PerroCard = (
         var fFecha1 = Date.UTC(aFecha1[0],aFecha1[1]-1,aFecha1[2]);
         var fFecha2 = Date.UTC(aFecha2[0],aFecha2[1]-1,aFecha2[2]);
 
-        if (f2==''){
+        if (f2===''){
             var dif = aFechaToday - fFecha1 ;
         }else{
             var dif = fFecha2-fFecha1;
@@ -101,12 +101,12 @@ export const PerroCard = (
                       
                         {
                            
-                            (restaFechas(fechaentrada,fechacierre) ==0)
+                            (restaFechas(fechaentrada,fechacierre) ===0)
                               &&<button type="button" className="btn btn-info">Llamar</button>
                         }
                         {
                            
-                           (estado == "azul")
+                           (estado === "azul")
                              &&<button type="button" className="btn btn-danger">Info</button>
                        }
                        
