@@ -40,6 +40,23 @@ export function NavHamb(){
                     activeClassName="active"
                     className="nav-item nav-link" 
                     exact
+                    to="/entaller"
+                >
+                    Taller
+                </NavLink>
+                <NavLink 
+                    activeClassName="active"
+                    className="nav-item nav-link" 
+                    exact
+                    to="/pormaterial"
+                >
+                    Material
+                </NavLink>
+
+                <NavLink 
+                    activeClassName="active"
+                    className="nav-item nav-link" 
+                    exact
                     to="/busqueda"
                 >
                     Busqueda

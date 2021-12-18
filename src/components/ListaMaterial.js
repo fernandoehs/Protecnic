@@ -3,7 +3,7 @@ import EditaEstado from './EditaEstado';
 import{db} from '../firebase';
 import { CardGroup, Card,Button, Alert,Badge } from 'react-bootstrap';
 
-export const ListaVisitar = (
+export const ListaMaterial = (
     {
         empresaseguro,
         expediente,
@@ -40,10 +40,10 @@ export const ListaVisitar = (
 
         
         const handleSubmit = e => {
-
+            var FechaToday = Date.now();
             const docRef = db.collection("clientes-bd").doc(id);
             //const addDocument = await docRef.set({ estado: "porvisitar" })
-             docRef.update({ estado: "entaller" })
+             docRef.update({ estado: "cerrado" ,fechacierre:`${FechaToday}`})
         
         
         }
@@ -102,7 +102,7 @@ export const ListaVisitar = (
                            </div>
                            <div className="col">
                              
-                                <Button className="btn btn-primary btn-sm" type="submit" variant="warning">Taller</Button>
+                                <Button className="btn btn-primary btn-sm" type="submit" variant="warning">Cerrar</Button>
                                 
                            </div>
                          </div>  

@@ -40,6 +40,14 @@ export function Nav(){
                 >
                     Visitar
                 </NavLink>
+                <NavLink 
+                    activeClassName="active"
+                    className="nav-item nav-link" 
+                    exact
+                    to="/entaller"
+                >
+                    Taller
+                </NavLink>
 
                 <NavLink 
                     activeClassName="active"

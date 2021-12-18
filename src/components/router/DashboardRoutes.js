@@ -10,6 +10,8 @@ import {ClientesOcaso} from '../ClientesOcaso';
 import {ClientesGenerali} from '../ClientesGenerali';
 import {ClientesPorllamar} from '../ClientesPorllamar';
 import {ClientesPorvisitar} from '../ClientesPorvisitar';
+import {EnTaller} from '../EnTaller';
+import {Material} from '../Material';
 import {Admin} from '../Admin';
 
 
@@ -37,6 +39,8 @@ export const DashboardRoutes = () => {
                 <Route exact path="/generali" component={ClientesGenerali}/>
                 <Route exact path="/porllamar" component={ClientesPorllamar}/>
                 <Route exact path="/porvisitar" component={ClientesPorvisitar}/>
+                <Route exact path="/entaller" component={EnTaller}/>
+                <Route exact path="/pormaterial" component={Material}/>
                 <Route exact path="/admin" component={Admin}/>
                 <Redirect to="/registro/"/>
              </Switch>    
