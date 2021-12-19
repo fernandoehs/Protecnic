@@ -1,8 +1,14 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink,useHistory } from 'react-router-dom'
 import { NavDropdown, Navbar,Nav, Container } from 'react-bootstrap'
 
 export function NavHamb(){
+    const history = useHistory();
+   function logout() {
+        localStorage.clear();
+       // window.location.href = '/';
+       history.pop='/registro';
+    }
   return (
     <Navbar bg="light" expand="lg">
   
@@ -101,25 +107,30 @@ export function NavHamb(){
                 >
                     Generali
                 </NavLink>
-                <NavLink 
+                {/* <NavLink 
                     activeClassName="active"
                     className="nav-item nav-link" 
                     exact
                     to="/admin"
                 >
                     Admin
-                </NavLink>
+                </NavLink> */}
 
                 <div className="login" style={{paddingLeft : '15rem'}}>
             <ul className="navbar-nav ml-auto ">
-                <NavLink 
-                    activeClassName="active"
-                    className="nav-item nav-link" 
-                    exact
-                    to="/login"
-                >
-                    Logout
-                </NavLink>
+            <NavLink
+            activeClassName="active"
+            className="nav-item nav-link" 
+            exact
+            to="/login"
+           
+        >
+             
+          <button onCkick={logout}>
+            ir a la home
+          </button>
+            Logout
+        </NavLink>
             </ul>
         </div>
       </Nav>

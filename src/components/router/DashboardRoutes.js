@@ -42,7 +42,7 @@ export const DashboardRoutes = () => {
                 <Route exact path="/entaller" component={EnTaller}/>
                 <Route exact path="/pormaterial" component={Material}/>
                 <Route exact path="/admin" component={Admin}/>
-                <Redirect to="/registro/"/>
+                <Redirect to="/login/"/>
              </Switch>    
           {/* </div>   */}
         </>

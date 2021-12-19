@@ -1,21 +1,227 @@
 import React from 'react'
+import LoginCss from './Login.css'
+import { useForm } from "react-hook-form";
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 
-export const LoginScreen = ({history}) => {
 
-    const handleLogin = ()=>{
-      history.push('/');
-    }
+export const LoginScreen = () => {
+    const history = useHistory();
+    // const handleLogin = (password)=>{
+    //   if(password==="123456"){
+    //     history.push('/');
+    //   }
+     
+    // }
+
+    const [user, setUser] = useState(null)
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = evento => {
+    console.log(evento);
+    
+    setTimeout(() => {
+      if (evento.password === "123456") {
+        setUser(evento)
+        history.push('/registro');
+      } else {
+        setUser(null)
+      }
+    }, 1000);
+  }
+
     return (
         <div className="container mt-5">
-          <h1>Login</h1>
+          <h1>Protecnic</h1>
           <hr />
-          <button
+
+          <div className={LoginCss.contenedor}>
+
+<div className={LoginCss.container} id="container">
+  <div className={LoginCss.loginCentrado}>
+    <div className="logo">
+
+    </div>
+    <h1>Inicia Sesión</h1>
+    <form onSubmit={handleSubmit(onSubmit)}>
+
+      <div className={`${LoginCss.inputBonito} ${errors.email && LoginCss.error}`}>
+        <label className={LoginCss.labelName} className={LoginCss.textoInput}>
+          <span className={LoginCss.contentName}>
+            Correo
+          </span>
+        </label>
+        <input type="text" autoComplete="off" name="email" placeholder="ejemplo@gmail.com"
+          {...register("email", {
+            required: {
+              value: true,
+              message: "Necesitas este campo"
+            },
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+              message: "El formato no es correcto"
+            }
+          })}
+        />
+        {errors.email && <span className={errors.email && LoginCss.mensajeError}>{errors.email.message}</span>}
+      </div>
+      <div className={`${LoginCss.inputBonito}  ${errors.password && LoginCss.error}`}>
+        <label className={LoginCss.labelName} className={LoginCss.textoInput}>
+          <span className={LoginCss.contentName}>
+            Contraseña
+          </span>
+        </label>
+        <input type="password" name="password" placeholder="Contraseña"
+          {...register("password", {
+            required: {
+              value: true,
+              message: "El campo es requerido"
+            },
+            minLength: {
+              value: 6,
+              message: "La contraseña debe tener al menos 6 caracteres"
+            }
+          })}
+
+        />
+        {errors.password && <span className={errors.password && LoginCss.mensajeError}>{errors.password.message}</span>}
+      </div>
+      {/* <div className="aks-input-wrap">
+        <input autoComplete="off" className="aks-input" type="checkbox" id="checkbox" name="checkbox" ref={register({ required: false })} />
+        <label className="aks-input-label"  >Recordarme por 30 días</label>
+    </div> */}
+
+      <button type="submit" value="submit" className="btn btn-primary"  > Iniciar Sesión</button>
+      
+          
+      {!user && <div>Contraseña incorrecta</div>}
+
+    </form>
+
+
+    <div className="border"></div>
+    <p>¿Aún no tienes cuenta?</p>
+  
+  </div>
+</div>
+</div>
+
+          
+          {/* <button
           className= "btn btn-primary"
           onClick={handleLogin}
           >
             Login
 
-          </button>
+          </button> */}
         </div>
     )
 }
+
+
+// import  './Login.css'
+// import Link from 'next/link'
+// import { useForm } from "react-hook-form";
+// import { useState } from 'react'
+
+
+
+// export const LoginScreen= ({history}) => {
+
+//   const [user, setUser] = useState(null)
+
+//   const { register, handleSubmit, formState: { errors } } = useForm();
+
+//   const onSubmit = evento => {
+//     console.log(evento);
+
+//     setTimeout(() => {
+//       if (evento.password === "123456") {
+//         setUser(evento)
+//       } else {
+//         setUser(null)
+//       }
+//     }, 4000);
+//   }
+
+//   return (
+//     <>
+//       <div className={LoginCss.contenedor}>
+
+//         <div className={LoginCss.container} id="container">
+//           <div className={LoginCss.loginCentrado}>
+//             <div className="logo">
+
+//             </div>
+//             <h1>Inicia Sesión</h1>
+//             <form onSubmit={handleSubmit(onSubmit)}>
+
+//               <div className={`${LoginCss.inputBonito} ${errors.email && LoginCss.error}`}>
+//                 <label className={LoginCss.labelName} className={LoginCss.textoInput}>
+//                   <span className={LoginCss.contentName}>
+//                     Correo
+//                   </span>
+//                 </label>
+//                 <input type="text" autoComplete="off" name="email" placeholder="ejemplo@gmail.com"
+//                   {...register("email", {
+//                     required: {
+//                       value: true,
+//                       message: "Necesitas este campo"
+//                     },
+//                     pattern: {
+//                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+//                       message: "El formato no es correcto"
+//                     }
+//                   })}
+//                 />
+//                 {errors.email && <span className={errors.email && LoginCss.mensajeError}>{errors.email.message}</span>}
+//               </div>
+//               <div className={`${LoginCss.inputBonito}  ${errors.password && LoginCss.error}`}>
+//                 <label className={LoginCss.labelName} className={LoginCss.textoInput}>
+//                   <span className={LoginCss.contentName}>
+//                     Contraseña
+//                   </span>
+//                 </label>
+//                 <input type="password" name="password" placeholder="Contraseña"
+//                   {...register("password", {
+//                     required: {
+//                       value: true,
+//                       message: "El campo es requerido"
+//                     },
+//                     minLength: {
+//                       value: 6,
+//                       message: "La contraseña debe tener al menos 6 caracteres"
+//                     }
+//                   })}
+
+//                 />
+//                 {errors.password && <span className={errors.password && LoginCss.mensajeError}>{errors.password.message}</span>}
+//               </div>
+//               {/* <div className="aks-input-wrap">
+//                 <input autoComplete="off" className="aks-input" type="checkbox" id="checkbox" name="checkbox" ref={register({ required: false })} />
+//                 <label className="aks-input-label"  >Recordarme por 30 días</label>
+//             </div> */}
+
+//               <button type="submit" value="submit" className={`${LoginCss.btn}`} > Iniciar Sesión</button>
+
+//               {!user && <div>Contraseña incorrecta</div>}
+
+//             </form>
+
+
+//             <div className="border"></div>
+//             <p>¿Aún no tienes cuenta?</p>
+//             <Link href="/registro" as="/registro">
+//               <a >
+//                 ¡Registrate!
+//               </a>
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   )
+// }
+
+

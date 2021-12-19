@@ -6,8 +6,8 @@ export function Lateral(){
     return (
 <ProSidebar>
   <Menu iconShape="square">
-    <MenuItem >Dashboard</MenuItem>
-    <SubMenu title="Components" >
+    <MenuItem icon={<FaGem />}>Dashboard</MenuItem>
+    <SubMenu title="Components" icon={<FaHeart />}>
       <MenuItem>Component 1</MenuItem>
       <MenuItem>Component 2</MenuItem>
     </SubMenu>
