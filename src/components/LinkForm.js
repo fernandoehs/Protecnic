@@ -196,14 +196,21 @@ const LinkForm = (props) => {
 
               <div class = "col">
                   <h5>Estado</h5>
-                  <input 
-                  type="text" 
-                  //className= "form-control" 
-                  placeholder="Estado"
-                  name="estado"
-                  onChange={handleInputChange}
-                  value={values.estado }>
-                  </input>
+                  {/* <input  */}
+                  {/* // type="text" 
+                  // //className= "form-control" 
+                  // placeholder="Estado"
+                  // name="estado"
+                  // onChange={handleInputChange}
+                  // value={values.estado }> */}
+                  <select name="empresaseguro" onChange={handleInputChange} >
+          <option selected>Estado</option>
+            <option value="porllamar">Por Llamar</option>
+            <option  value="porvisitar">Por Visitar</option>
+            <option value="entaller">En Taller</option>
+            <option value="pormaterial">Material Pedido</option>
+          </select>
+                  {/* </input> */}
               </div>
             </div>
          </div>

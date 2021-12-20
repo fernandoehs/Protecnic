@@ -10,7 +10,7 @@ export const ClientesCatalana = () => {
         const [links,setLinks]=useState([]);
          //db.collection('perros').where('registroperro','==',linkObject).onSnapshot((querySnapshot)=>{
         const getlinks=()=>{ 
-           db.collection("clientes-bd").where("empresaseguro","==","Catalana").onSnapshot((querySnapshot)=>{
+           db.collection("clientes-bd").where("empresaseguro","==","catalana").onSnapshot((querySnapshot)=>{
                const docs=[];
                querySnapshot.forEach((doc)=>{
                    

@@ -74,11 +74,11 @@ export const ListaBasica = (
                                 
                                 </p>
                            </div>
-                           <div className="col">
+                           {/* <div className="col">
                                
                            
                            
-                           </div>
+                           </div> */}
                          </div>  
 
                          <div className="row">
@@ -100,11 +100,11 @@ export const ListaBasica = (
                                 Dias: {restaFechas(fechaentrada,fechacierre)}
                                 </p>
                            </div>
-                           <div className="col">
+                           {/* <div className="col">
                              
                                 <Button className="btn btn-primary btn-sm" type="submit" variant="warning">Visitar</Button>
                                 
-                           </div>
+                           </div> */}
                          </div>  
 
                          <div className="row">
@@ -138,11 +138,11 @@ export const ListaBasica = (
                        }
                                 </p>
                            </div>
-                           <div className="col">
+                           {/* <div className="col">
                                 <p className="card-text">
                                 
                                 </p>
-                           </div>
+                           </div> */}
                          </div>  
 
                       

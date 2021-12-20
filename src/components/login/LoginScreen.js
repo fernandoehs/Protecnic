@@ -43,7 +43,7 @@ export const LoginScreen = () => {
     <div className="logo">
 
     </div>
-    <h1>Inicia Sesión</h1>
+    {/* <h1>Inicia Sesión</h1> */}
     <form onSubmit={handleSubmit(onSubmit)}>
 
       <div className={`${LoginCss.inputBonito} ${errors.email && LoginCss.error}`}>
@@ -101,7 +101,7 @@ export const LoginScreen = () => {
 
 
     <div className="border"></div>
-    <p>¿Aún no tienes cuenta?</p>
+    {/* <p>¿Aún no tienes cuenta?</p> */}
   
   </div>
 </div>

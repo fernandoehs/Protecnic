@@ -126,9 +126,9 @@ export function NavHamb(){
            
         >
              
-          <button onCkick={logout}>
+          {/* <button onCkick={logout}>
             ir a la home
-          </button>
+          </button> */}
             Logout
         </NavLink>
             </ul>
