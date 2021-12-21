@@ -4,12 +4,17 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Select from 'react-select';
 import { RegistradosLista } from './RegistradosLista';
 import firebase from 'firebase/app';
-import{toast} from "react-toastify";
+//import{toast} from "react-toastify";
 import{NuevaForm} from './NuevaForm';
+import { CardGroup, Card,Button, Alert,Badge } from 'react-bootstrap';
 
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LinkForm = (props) => {
 
+  const notify = () => toast.dark("Expediente Registrado!");
   
   
     const initialStateValues ={
@@ -92,7 +97,7 @@ const LinkForm = (props) => {
           </select>
      </div>
          <div className="col">
-         <h5>Número de Expediente</h5>
+         <h5 >Número de Expediente</h5>
           <input 
           type="textarea" 
           //className= "form-control" 
@@ -203,7 +208,7 @@ const LinkForm = (props) => {
                   // name="estado"
                   // onChange={handleInputChange}
                   // value={values.estado }> */}
-                  <select name="empresaseguro" onChange={handleInputChange} >
+                  <select name="estado" onChange={handleInputChange} >
           <option selected>Estado</option>
             <option value="porllamar">Por Llamar</option>
             <option  value="porvisitar">Por Visitar</option>
@@ -217,9 +222,10 @@ const LinkForm = (props) => {
 
       
 
-        <button className="button">
+        <button className="btn btn-primary" type="submit" onClick={notify} >
           Guardar
         </button>
+        
          
         <table className="table table-bordered">
   
@@ -228,7 +234,7 @@ const LinkForm = (props) => {
         </tr>
         </table>
         
-
+        <ToastContainer />
       </form>
 
 

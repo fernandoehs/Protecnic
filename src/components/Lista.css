@@ -21,7 +21,7 @@ table {
 .btn{
     border-radius: 0,5;
 }
-input[type="submit"],
+/* input[type="submit"],
 .button {
   position: relative;
   background: #ec5990;
@@ -39,4 +39,4 @@ input[type="submit"],
   width: 100%;
   font-weight: lighter;
   transition: 0.3s all;
-}
+} */

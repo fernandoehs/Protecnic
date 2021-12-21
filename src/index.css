@@ -68,7 +68,7 @@ section > label {
   font-weight: 200;
 }
 
-input[type="submit"],
+/* input[type="submit"],
 .button {
   position: relative;
   background: #ec5990;
@@ -86,7 +86,7 @@ input[type="submit"],
   width: 100%;
   font-weight: lighter;
   transition: 0.3s all;
-}
+} */
 
 .buttonBlack {
   background: black;
@@ -116,7 +116,7 @@ input[type="submit"],
   z-index: 9999999;
 }
 
-button[type="button"] {
+/* button[type="button"] {
   padding: 5px;
   background: #516391;
   color: white;
@@ -130,12 +130,12 @@ input[type="submit"]:hover,
 button[type="button"]:hover {
   background: #bf1650;
   color: white;
-}
+} */
 
-input[type="submit"]:active {
+/* input[type="submit"]:active {
   transition: 0.3s all;
   top: 2px;
-}
+} */
 
 .preact {
   opacity: 0;
